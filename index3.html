@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalização de Compra</title>
+</head>
+<body>
+    <style>
+        .img{
+            display: table-cell;
+            float: left;
+        }
+        .text{
+            display: table-cell;
+            float: left;
+            padding-left: 20px;
+        }
+        .img2{
+            display: table-cell;
+            float: left;
+            padding-left: 90px;
+        }
+        .text2{
+            display: table-cell;
+            float: left;
+            padding-left: 50px;
+        }
+    </style>
+    <p id="login">Visitante</p>
+
+
+    <script>
+        function mFuncao(){
+            document.getElementById("login").innerHTML = document.getElementById("nm").value;
+        }
+
+        function sair(){
+        document.location.reload(true);
+        }
+
+        function addFuncao(qtd){
+            var prd1 = parseInt(document.getElementById("prd1").innerHTML);
+            var preco1 = parseFloat(document.getElementById("preco1").innerHTML);
+            if ('+1') {
+                document.getElementById("prd1").innerHTML = ++prd1;
+                document.getElementById("preco1").innerHTML = preco1 + 3.00;     
+            }
+        }
+
+        function remFuncao(qtd){
+            var prd1 = parseInt(document.getElementById("prd1").innerHTML);
+            var preco1 = parseFloat(document.getElementById("preco1").innerHTML);
+            if ('-1' && prd1 > 0) {
+                document.getElementById("prd1").innerHTML = --prd1;
+                document.getElementById("preco1").innerHTML = preco1 - 3.00;
+            }
+        }
+
+        function addFuncao2(qtd){
+            var prd2 = parseInt(document.getElementById("prd2").innerHTML);
+            var preco2 = parseFloat(document.getElementById("preco2").innerHTML);
+            if ('+1') {
+                document.getElementById("prd2").innerHTML = ++prd2;
+                document.getElementById("preco2").innerHTML = preco2 + 5.00;     
+            }
+        }
+
+        function remFuncao2(qtd){
+            var prd2 = parseInt(document.getElementById("prd2").innerHTML);
+            var preco2 = parseFloat(document.getElementById("preco2").innerHTML);
+            if ('-1' && prd2 > 0) {
+                document.getElementById("prd2").innerHTML = --prd2;
+                document.getElementById("preco2").innerHTML = preco2 - 5.00;
+            }
+        }
+    </script>
+
+
+    <div>
+        Nome: <input type="text" id="nm" placeholder="Insira seu nome">
+        <button onclick="mFuncao()">Logar</button><br><br>
+    </div>
+
+    <div class="img">
+        <img src="https://www.papelariaartnova.com.br/img/products/caneta-esferografica-cis-bpx-07mm_1_650.jpg" 
+        alt="" width=200 height=180>
+    </div>
+    <div class="text">
+        <p>Caneta Esferográfica Cis BPX</p>
+        <p>R$ 3,00</p>
+        <button onclick="addFuncao('+1')" class="prd1">+</button>
+        <p id="prd1">0</p>
+        <button onclick="remFuncao('-1')" class="prd1">-</button>
+    </div>
+    <div class="text2">
+        <p>Valor Total(R$):</p>
+        <p id="preco1"> 00.00</p>
+    </div>
+    
+    <div class="img2">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjPdoShgDgEik9vempXI6B7MzVw_9hWdVGhA&usqp=CAU" 
+        alt="" width=200 height=180>
+    </div>
+    <div class="text">
+        <p>Caneta Cristal</p>
+        <p>R$ 5,00</p>
+        <button onclick="addFuncao2('+1')" class="prd2">+</button>
+        <p id="prd2">0</p>
+        <button onclick="remFuncao2('-1')" class="prd2">-</button>
+    </div>
+    <div class="text2">
+        <p>Valor Total(R$):</p>
+        <p id="preco2"> 00.00</p>
+    </div>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+
+    <center>
+        <button onclick="alert('Obrigado pela preferência!');  sair()">Finalizar Pedido</button>
+    </center>
+</body>
+</html>
